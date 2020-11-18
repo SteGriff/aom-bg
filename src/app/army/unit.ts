@@ -8,7 +8,7 @@ export interface Unit {
     name: string;
     race: Race;
     type: UnitType;
-    unitCost : Cost[];
+    cost : Cost[];
     classes : UnitClass[];
     baseDice : number;
     bonuses? : Bonus[];

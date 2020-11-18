@@ -15,4 +15,8 @@ export class UnitCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  allClasses() : string[]
+  {
+    return [this.unit.type, ...this.unit.classes];
+  }
 }

@@ -20,7 +20,7 @@ export class UnitService {
         classes: [UnitClass.Warrior],
         type: UnitType.Mortal,
         baseDice: 3,
-        unitCost: [
+        cost: [
           { resource: ResourceType.Food, qty: 1 },
           { resource: ResourceType.Wood, qty: 1 }
         ]
@@ -31,7 +31,7 @@ export class UnitService {
         classes: [UnitClass.Warrior],
         type: UnitType.Mortal,
         baseDice: 3,
-        unitCost: [
+        cost: [
           { resource: ResourceType.Food, qty: 1 },
           { resource: ResourceType.Wood, qty: 1 }
         ]

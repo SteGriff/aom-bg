@@ -4,12 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { UnitListComponent } from './army/unit-list/unit-list.component';
 import { UnitCardComponent } from './army/unit-card/unit-card.component';
+import { CubeComponent } from './common/cube/cube.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UnitListComponent,
-    UnitCardComponent
+    UnitCardComponent,
+    CubeComponent
   ],
   imports: [
     BrowserModule

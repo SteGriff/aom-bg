@@ -1,8 +1,8 @@
 export enum UnitClass {
-    Warrior,
-    Archer,
-    Cavalry,
-    Flyer,
-    Giant,
-    GiantKiller
+    Warrior = "warrior",
+    Archer = "archer",
+    Cavalry = "cavalry",
+    Flyer = "flyer",
+    Giant = "giant",
+    GiantKiller = "giant-killer"
 }

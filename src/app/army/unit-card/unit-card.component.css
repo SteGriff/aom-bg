@@ -38,3 +38,7 @@
     border-right: 8px solid transparent;
     border-bottom: 16px solid black;
 }
+
+.mt--1{
+    margin-top: -.25rem;
+}

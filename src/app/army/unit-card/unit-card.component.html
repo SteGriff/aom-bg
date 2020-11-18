@@ -1,8 +1,19 @@
 <div class="br4 mv2 pa2 ph3 w5" [class]="unit.race">
     <p class="tc b">
-        <span class="fr icon" [class]="unit.type + '-icon'" [title]="unit.type | titlecase"></span>
+        <span class="fl pa1 mt--1 b--black bg-white tc b dib w1 h1">{{unit.baseDice}}</span>
         {{unit.name}}
+        <span class="fr icon" [class]="unit.type + '-icon'" [title]="unit.type | titlecase"></span>
     </p>
-    <p>{{unit.race}}</p>
-    <p>{{unit.type}}</p>
+    <p class="tc i serif">
+        <span *ngFor="let aClass of allClasses(); let isLast = last">
+            {{aClass | titlecase}}{{isLast ? '' : ', '}}
+        </span>
+    </p>
+    <p class="mv1 tc" *ngFor="let cost of unit.cost">
+        {{cost.qty}} &times; <aom-cube [resource]="cost.resource"></aom-cube>
+    </p>
+    <!-- <div class="
+    ba bw2 b--black
+    w2 h2 pa1 center
+    bg-white tc b ">2</div> -->
 </div>

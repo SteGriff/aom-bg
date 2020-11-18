@@ -1,7 +1,7 @@
 export enum ResourceType
 {
-    Food = 0,
-    Wood = 1,
-    Gold = 2,
-    Favour = 3
+    Food = "food",
+    Wood = "wood",
+    Gold = "gold",
+    Favour = "favour"
 }
