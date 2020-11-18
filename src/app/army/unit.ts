@@ -11,7 +11,7 @@ export interface Unit {
     unitCost : Cost[];
     classes : UnitClass[];
     baseDice : number;
-    bonuses : Bonus[];
-    specialText : string;
+    bonuses? : Bonus[];
+    specialText? : string;
 }
 

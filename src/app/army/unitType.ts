@@ -1,6 +1,6 @@
 export enum UnitType
 {
-    Mortal = 0,
-    Myth = 1,
-    Hero = 2
+    Mortal = "mortal",
+    Myth = "myth",
+    Hero = "hero"
 }
