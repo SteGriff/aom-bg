@@ -4,8 +4,9 @@
         {{unit.name}}
         <span class="fr icon" [class]="unit.type + '-icon'" [title]="unit.type | titlecase"></span>
     </p>
-    <p class="tc i serif">
-        <span *ngFor="let aClass of allClasses(); let isLast = last">
+    <p class="tc serif">
+        <span class="small-caps" *ngIf="unit.age">{{unit.age}}</span>
+        <span class="i" *ngFor="let aClass of allClasses(); let isLast = last">
             {{aClass | titlecase}}{{isLast ? '' : ', '}}
         </span>
     </p>
@@ -14,13 +15,15 @@
             {{cost.qty}} &times; <aom-cube [resource]="cost.resource"></aom-cube>
         </span>
     </p>
-    <div *ngIf="unit.bonuses?.length > 0" class="mv2 w4 center">
+    <div *ngIf="unit.bonuses?.length > 0"
+        class="mv2 center"
+        [class]="bonusWidthCssClass(unit)">
         <p class="mv2" *ngFor="let bonus of unit.bonuses">
             <b>+</b>
             <span class="pa1 mt--1 bg-white tc b dib w1 h1">
                 {{bonus.diceBonus}}
             </span>
-            <span class="small-caps"> vs </span>
+            <span class="small-caps f6"> vs </span>
             {{bonus.targetClass | titlecase}}
         </p>
     </div>

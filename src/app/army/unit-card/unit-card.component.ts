@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Unit } from 'app/army/unit';
+import { UnitType } from '../unitType';
+import { UnitClass } from '../unitClass';
 
 @Component({
   selector: 'aom-unit-card',
@@ -19,4 +21,12 @@ export class UnitCardComponent implements OnInit {
   {
     return [this.unit.type, ...this.unit.classes];
   }
+
+  bonusWidthCssClass(unit : Unit) : string
+  {
+    return unit.bonuses?.some(b => b.targetClass == UnitClass.GiantKiller)
+      ? "bonus-wide"
+      : "bonus-narrow";
+  }
+
 }

@@ -39,6 +39,15 @@
     border-bottom: 16px solid black;
 }
 
+.bonus-narrow {
+    width: 7.5rem;
+}
+
+.bonus-wide {
+    width: 8.5rem;
+}
+
+
 .mt--1{
     margin-top: -.25rem;
 }
