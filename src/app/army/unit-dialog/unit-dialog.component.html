@@ -1,0 +1,27 @@
+<div class="z-1
+	    bg-gray o-50
+	    fixed absolute--fill
+	    t-0 l-0"
+         *ngIf="unitDialogService.dialogOpen"
+         (click)="unitDialogService.closeDialog()">
+    </div>
+
+    <div class="z-2
+		b--black-80 black-80 bg-white bw1 ba br4
+		fixed t-50 l-50 translate-center w-90 w-50-ns
+		ma2 pa1 ph3"
+         *ngIf="unitDialogService.dialogOpen">
+
+        <span class="fr f3 pointer" (click)="unitDialogService.closeDialog()">&times;</span>
+
+        <div class="center pv2">
+            <form>
+                <fieldset class="ba b--transparent ph0 mh0">
+                    <legend class="f4 fw6">{{unitDialogService.unit.name}}</legend>
+                    
+                    <aom-unit-card [unit]="unitDialogService.unit"></aom-unit-card>
+
+                </fieldset>
+            </form>
+        </div>
+    </div>

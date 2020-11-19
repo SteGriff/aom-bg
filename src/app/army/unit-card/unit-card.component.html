@@ -1,4 +1,6 @@
-<div class="br4 ma3 pa2 ph3 w5 grow pointer" [class]="unit.race">
+<div class="br4 ma3 pa2 ph3 w5 grow pointer"
+    [class]="unit.race"
+    (click)="unitDialogService.openDialog(unit)">
     <p class="tc b">
         <span class="fl pa1 mt--1 bg-white tc b dib w1 h1">{{unit.baseDice}}</span>
         {{unit.name}}

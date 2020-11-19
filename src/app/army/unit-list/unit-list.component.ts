@@ -9,11 +9,9 @@ import { UnitService } from 'app/army/unit.service';
 })
 export class UnitListComponent implements OnInit {
 
-  constructor(unitService: UnitService) {
-    this.unitService = unitService;
+  constructor(public unitService: UnitService) {
   }
 
-  public unitService: UnitService;
   public allUnits: Unit[];
 
   ngOnInit(): void {

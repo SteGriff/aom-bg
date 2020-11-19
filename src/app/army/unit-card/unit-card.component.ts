@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Unit } from 'app/army/unit';
 import { UnitType } from '../unitType';
 import { UnitClass } from '../unitClass';
+import { UnitDialogService } from '../unit-dialog/unit-dialog.service';
 
 @Component({
   selector: 'aom-unit-card',
@@ -10,7 +11,7 @@ import { UnitClass } from '../unitClass';
 })
 export class UnitCardComponent implements OnInit {
 
-  constructor() { }
+  constructor(public unitDialogService : UnitDialogService) { }
 
   @Input("unit") unit: Unit;
 
