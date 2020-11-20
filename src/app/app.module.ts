@@ -7,6 +7,10 @@ import { UnitCardComponent } from './army/unit-card/unit-card.component';
 import { CubeComponent } from './common/cube/cube.component';
 import { UnitDialogComponent } from './army/unit-dialog/unit-dialog.component';
 import { UnitCardContentComponent } from './army/unit-card-content/unit-card-content.component';
+import { AppRoutingModule } from 'app/app-routing/app-routing.module';
+import { HomeComponent } from './home/home.component';
+import { UnitViewComponent } from './army/unit-view/unit-view.component';
+import { UnitService } from 'app/army/unit.service';
 
 @NgModule({
   declarations: [
@@ -15,12 +19,17 @@ import { UnitCardContentComponent } from './army/unit-card-content/unit-card-con
     UnitCardComponent,
     CubeComponent,
     UnitDialogComponent,
-    UnitCardContentComponent
+    UnitCardContentComponent,
+    HomeComponent,
+    UnitViewComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    UnitService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
