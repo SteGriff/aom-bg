@@ -1,5 +1,5 @@
-<div class="br4 ma3 pa2 ph3 w5 grow pointer"
-    [class]="unit.race"
-    (click)="unitDialogService.openDialog(unit)">
-    <aom-unit-card-content [unit]="unit"></aom-unit-card-content>
-</div>
+<a class="link black" uiSref="unit" [uiParams]="{ unitName : unit.name}">
+    <div class="br4 ma3 pa2 ph3 w5 grow pointer" [class]="unit.race">
+        <aom-unit-card-content [unit]="unit"></aom-unit-card-content>
+    </div>
+</a>
