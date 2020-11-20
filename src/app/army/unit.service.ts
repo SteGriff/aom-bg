@@ -191,7 +191,7 @@ export class UnitService {
           { diceBonus: 4, targetClass: UnitType.Myth },
         ],
         specialText: "Can be resurrected immediately after being eliminated (and returned to the owning player's board) if there is a Priest unit in the battle on his side. The cost of resurrection is 4 Favour."
-      },      
+      },
       {
         name: "Jarl",
         race: Race.Norse,
@@ -325,7 +325,7 @@ export class UnitService {
         bonuses: [
           { diceBonus: 4, targetClass: UnitType.Myth },
         ]
-      },     
+      },
       {
         name: "Heroic Norse Hero",
         race: Race.Norse,
@@ -544,4 +544,23 @@ export class UnitService {
     return this.allUnits;
   }
 
+  getUnitsBeatenBy(myUnit: Unit) {
+    if (!myUnit.bonuses) return [];
+
+    return this.allUnits
+    .filter(u => u.race != myUnit.race)
+    .filter(
+      enemyUnit => myUnit.bonuses?.some(bonus => enemyUnit.classes?.some(euClass => bonus.targetClass == euClass))
+      || myUnit.bonuses?.some(bonus => bonus.targetClass == enemyUnit.type)
+      );
+  }
+
+  getUnitsThatBeat(myUnit: Unit) {
+    return this.allUnits
+    .filter(u => u.race != myUnit.race)
+    .filter(
+      enemyUnit => enemyUnit.bonuses?.some(bonus => myUnit.classes?.some(myClass => bonus.targetClass == myClass))
+      || enemyUnit.bonuses?.some(bonus => bonus.targetClass == myUnit.type)
+      );
+  }
 }

@@ -1,27 +1,74 @@
 <div class="z-1
 	    bg-gray o-50
 	    fixed absolute--fill
-	    t-0 l-0"
-         *ngIf="unitDialogService.dialogOpen"
-         (click)="unitDialogService.closeDialog()">
-    </div>
+	    t-0 l-0" *ngIf="unitDialogService.dialogOpen" (click)="unitDialogService.closeDialog()">
+</div>
 
-    <div class="z-2
+<div class="z-2
 		b--black-80 black-80 bg-white bw1 ba br4
 		fixed t-50 l-50 translate-center w-90 w-50-ns
-		ma2 pa1 ph3"
-         *ngIf="unitDialogService.dialogOpen">
+		ma2 pa1 ph3" *ngIf="unitDialogService.dialogOpen">
 
-        <span class="fr f3 pointer" (click)="unitDialogService.closeDialog()">&times;</span>
+    <span class="fr f3 pointer" (click)="unitDialogService.closeDialog()">&times;</span>
 
-        <div class="center pv2">
-            <form>
-                <fieldset class="ba b--transparent ph0 mh0">
-                    <legend class="f4 fw6">{{unitDialogService.unit.name}}</legend>
-                    
-                    <aom-unit-card [unit]="unitDialogService.unit"></aom-unit-card>
+    <div class="center pv2">
+        <form>
+            <fieldset class="ba b--transparent ph0 mh0">
+                <legend class="tc f4 fw6"><u>{{unitDialogService.unit.baseDice}}</u> {{unitDialogService.unit.name}}
+                </legend>
 
-                </fieldset>
-            </form>
-        </div>
+                <div class="">
+                    <aom-unit-card-content [hide]="['header', 'cost']" [unit]="unitDialogService.unit">
+                    </aom-unit-card-content>
+                </div>
+                <div class="pv2 tc center disabled">
+                    <label class="mh2"><input type="checkbox" disabled checked>Egyptian</label>
+                    <label class="mh2"><input type="checkbox" disabled checked>Greek</label>
+                    <label class="mh2"><input type="checkbox" disabled checked>Norse</label>
+                </div>
+                <table class="collapse">
+                    <tbody>
+                        <tr>
+                            <th class="h5 bg-light-gray">
+                                <p class="rotate-270">Strong vs</p>
+                            </th>
+                            <td class="bg-light-gray">
+                                <!-- TODO make carousel component -->
+                                <div><!-- class="overflow-x-scroll" -->
+                                    <div class="w5 dib ba b--black pa1 ma1"
+                                        *ngFor="let enemy of unitService.getUnitsBeatenBy(unitDialogService.unit)"
+                                        [class]="enemy.race">
+                                        <aom-unit-card-content [hide]="['cost', 'bonuses', 'special']" [unit]="enemy">
+                                        </aom-unit-card-content>
+                                    </div>
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="h5 bg-moon-gray">
+                                <p class="rotate-270">Weak vs</p>
+                            </th>
+                            <td class="bg-moon-gray">
+                                <!-- TODO make carousel component -->
+                                <div><!-- class="overflow-x-scroll" -->
+                                    <div class="w5 dib ba b--black pa1 ma1"
+                                        *ngFor="let enemy of unitService.getUnitsThatBeat(unitDialogService.unit)"
+                                        [class]="enemy.race">
+                                        <aom-unit-card-content [hide]="['cost', 'special']" [unit]="enemy">
+                                        </aom-unit-card-content>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+                <div class="flex">
+
+
+                </div>
+            </fieldset>
+        </form>
     </div>
+</div>

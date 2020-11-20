@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UnitService } from 'app/army/unit.service';
 import { UnitDialogService } from './unit-dialog.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { UnitDialogService } from './unit-dialog.service';
 })
 export class UnitDialogComponent implements OnInit {
 
-  constructor(public unitDialogService : UnitDialogService) { 
+  constructor(public unitDialogService : UnitDialogService, public unitService : UnitService) { 
   }
 
   ngOnInit(): void {

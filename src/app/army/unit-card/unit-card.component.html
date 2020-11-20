@@ -1,40 +1,5 @@
 <div class="br4 ma3 pa2 ph3 w5 grow pointer"
     [class]="unit.race"
     (click)="unitDialogService.openDialog(unit)">
-    <p class="tc b">
-        <span class="fl pa1 mt--1 bg-white tc b dib w1 h1">{{unit.baseDice}}</span>
-        {{unit.name}}
-        <span class="fr icon" [class]="unit.type + '-icon'" [title]="unit.type | titlecase"></span>
-    </p>
-    <p class="tc serif">
-        <span class="small-caps" *ngIf="unit.age">{{unit.age}}</span>
-        <span class="i" *ngFor="let aClass of allClasses(); let isLast = last">
-            {{aClass | titlecase}}{{isLast ? '' : ', '}}
-        </span>
-    </p>
-    <p class="tc pv1">
-        <span class="mh1" *ngFor="let cost of unit.cost">
-            {{cost.qty}} &times; <aom-cube [resource]="cost.resource"></aom-cube>
-        </span>
-    </p>
-    <div *ngIf="unit.bonuses?.length > 0"
-        class="mv2 center"
-        [class]="bonusWidthCssClass(unit)">
-        <p class="mv2" *ngFor="let bonus of unit.bonuses">
-            <b>+</b>
-            <span class="pa1 mt--1 bg-white tc b dib w1 h1">
-                {{bonus.diceBonus}}
-            </span>
-            <span class="small-caps f6"> vs </span>
-            {{bonus.targetClass | titlecase}}
-        </p>
-    </div>
-    <div *ngIf="unit.specialText">
-        <p class="mt3 mb0 tc small-caps b f6">Special</p>
-        <p class="mv1 f6 tc">{{unit.specialText}}</p>
-    </div>
-    <!-- <div class="
-    ba bw2 b--black
-    w2 h2 pa1 center
-    bg-white tc b ">2</div> -->
+    <aom-unit-card-content [unit]="unit"></aom-unit-card-content>
 </div>
