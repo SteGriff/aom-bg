@@ -10,14 +10,11 @@ export class UnitService {
   private allUnits: Unit[];
 
   constructor() {
-    console.log("UnitService constructor");
     this.allUnits = allUnitsData;
-    console.log("UnitService constructor finished");
   }
 
   getByName(name : string) : Unit
   {
-    console.log("getByName");
     return this.allUnits.filter(u => u.name === name)[0];
   }
 

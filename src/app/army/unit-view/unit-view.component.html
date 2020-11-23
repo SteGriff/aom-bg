@@ -5,31 +5,33 @@
         <span class="pa1 mt--1 bg-white black tc b dib w2">{{unit.baseDice}}</span>
     </h1>
 
-    <div class="dib ph3" [class]="unit.race">
+    <div class="dib ph3 mb3" [class]="unit.race">
         <aom-unit-card-content [hide]="['header', 'cost']" [unit]="unit">
         </aom-unit-card-content>
     </div>
-    <div class="pv2 tc center disabled">
-        <label class="mh2"><input type="checkbox" disabled checked>Egyptian</label>
-        <label class="mh2"><input type="checkbox" disabled checked>Greek</label>
-        <label class="mh2"><input type="checkbox" disabled checked>Norse</label>
-    </div>
+
     <table class="collapse">
+        <thead>
+            <tr>
+                <th class="bg-near-white pa2">Filter</th>
+                <td class="bg-near-white pa2">
+                    <form [formGroup]="filterForm">
+                        <ng-container *ngFor="let thisRace of ['egyptian', 'greek', 'norse']">
+                            <label class="mh2" *ngIf="unit.race !== thisRace">
+                                <input type="checkbox" [formControlName]="thisRace">{{thisRace | titlecase}}</label>
+                        </ng-container>
+                    </form>
+                </td>
+            </tr>
+        </thead>
         <tbody>
             <tr>
                 <th class="h5 bg-light-gray">
                     <p class="rotate-270">Strong vs</p>
                 </th>
                 <td class="bg-light-gray">
-                    <!-- TODO make carousel component -->
                     <div>
-                        <!-- class="overflow-x-scroll" -->
-                        <div class="w5 dib ba b--black pa1 ma1" *ngFor="let enemy of unitService.getUnitsBeatenBy(unit)"
-                            [class]="enemy.race">
-                            <aom-unit-card-content [hide]="['cost', 'bonuses', 'special']" [unit]="enemy">
-                            </aom-unit-card-content>
-                        </div>
-
+                        <aom-opponent-list [opponents]="filteredUnitsBeatenByMe()"></aom-opponent-list>
                     </div>
                 </td>
             </tr>
@@ -38,14 +40,8 @@
                     <p class="rotate-270">Weak vs</p>
                 </th>
                 <td class="bg-moon-gray">
-                    <!-- TODO make carousel component -->
                     <div>
-                        <!-- class="overflow-x-scroll" -->
-                        <div class="w5 dib ba b--black pa1 ma1" *ngFor="let enemy of unitService.getUnitsThatBeat(unit)"
-                            [class]="enemy.race">
-                            <aom-unit-card-content [hide]="['cost', 'special']" [unit]="enemy">
-                            </aom-unit-card-content>
-                        </div>
+                        <aom-opponent-list [opponents]="filteredUnitsThatBeatMe()"></aom-opponent-list>
                     </div>
                 </td>
             </tr>

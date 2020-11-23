@@ -33,7 +33,7 @@ const unitState = {
       ],
       config: (router: UIRouter, injector: Injector) => {
         router.urlService.rules.initial({ state: "home" });
-        router.trace.enable();
+        // router.trace.enable(); // UI-Router Tracing
       }
     }),
   ],

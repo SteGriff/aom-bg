@@ -11,6 +11,8 @@ import { AppRoutingModule } from 'app/app-routing/app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { UnitViewComponent } from './army/unit-view/unit-view.component';
 import { UnitService } from 'app/army/unit.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { OpponentListComponent } from './army/opponent-list/opponent-list.component';
 
 @NgModule({
   declarations: [
@@ -21,10 +23,13 @@ import { UnitService } from 'app/army/unit.service';
     UnitDialogComponent,
     UnitCardContentComponent,
     HomeComponent,
-    UnitViewComponent
+    UnitViewComponent,
+    OpponentListComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [
