@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { UnitListComponent } from './army/unit-list/unit-list.component';
 import { UnitCardComponent } from './army/unit-card/unit-card.component';
 import { CubeComponent } from './common/cube/cube.component';
-import { UnitDialogComponent } from './army/unit-dialog/unit-dialog.component';
 import { UnitCardContentComponent } from './army/unit-card-content/unit-card-content.component';
 import { AppRoutingModule } from 'app/app-routing/app-routing.module';
 import { HomeComponent } from './home/home.component';
@@ -20,7 +19,6 @@ import { OpponentListComponent } from './army/opponent-list/opponent-list.compon
     UnitListComponent,
     UnitCardComponent,
     CubeComponent,
-    UnitDialogComponent,
     UnitCardContentComponent,
     HomeComponent,
     UnitViewComponent,
