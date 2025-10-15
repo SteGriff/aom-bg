@@ -73,17 +73,10 @@ const titleCase = (str: string): string => {
   max-width: 14rem;
 }
 
-.mt--1 {
-  margin-top: -0.25rem;
-}
-
 .icon {
   display: inline-block;
   width: 1rem;
   height: 1rem;
 }
 
-.small-caps {
-  font-variant: small-caps;
-}
 </style>

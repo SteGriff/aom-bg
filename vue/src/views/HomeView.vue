@@ -14,6 +14,3 @@ const title = 'Age of Mythology'
   </div>
 </template>
 
-<style scoped>
-/* Component-specific styles if needed */
-</style>

@@ -93,34 +93,3 @@ const filteredUnitsThatBeatMe = computed((): Unit[] => {
     </table>
   </div>
 </template>
-
-<style scoped>
-.mt--1 {
-  margin-top: -0.25rem;
-}
-
-.w2 {
-  width: 2rem;
-}
-
-.egyptian {
-  background-color: #ffeaa7;
-}
-
-.greek {
-  background-color: #74b9ff;
-}
-
-.norse {
-  background-color: #a29bfe;
-}
-
-.rotate-270 {
-  transform: rotate(270deg);
-  white-space: nowrap;
-}
-
-.h5 {
-  height: 8rem;
-}
-</style>

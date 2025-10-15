@@ -13,16 +13,3 @@ defineProps<{
   </div>
 </template>
 
-<style scoped>
-.egyptian {
-  background-color: #ffeaa7;
-}
-
-.greek {
-  background-color: #74b9ff;
-}
-
-.norse {
-  background-color: #a29bfe;
-}
-</style>

@@ -1,86 +1,43 @@
-@import './base.css';
 
-/* Global styles */
-main {
-  min-height: 100vh;
+main {min-height:100vh;}
+
+.egyptian
+{
+    background: #FED561;
 }
 
-.egyptian {
-  background: #fed561;
+.greek
+{
+    background: #1F9770;
 }
 
-.greek {
-  background: #1f9770;
-}
-
-.norse {
-  background: #83dbff;
+.norse
+{
+    background: #83DBFF;
 }
 
 .icon {
-  width: 16px;
-  height: 16px;
-  background: black;
-  display: block;
+    width: 16px;
+    height: 16px;
+    background: black;
+    display: block;
 }
 
-.mortal-icon {
-  border-radius: 100%;
+.mortal-icon
+{
+    border-radius: 100%;
 }
 
-.hero-icon {
-  background: none;
-  width: 0;
-  height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-bottom: 16px solid black;
+.hero-icon
+{
+    background: none;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 16px solid black;
 }
 
-.myth-icon {
-  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-}
-
-.rotate-270 {
-  transform: rotate(270deg);
-  white-space: nowrap;
-}
-
-.small-caps {
-  font-variant: small-caps;
-}
-
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
-}
-
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+.mt--1{
+    margin-top: -.25rem;
 }

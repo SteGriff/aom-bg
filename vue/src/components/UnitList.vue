@@ -29,7 +29,3 @@ const filteredUnits = computed((): Unit[] => {
     </div>
   </div>
 </template>
-
-<style scoped>
-/* Component-specific styles if needed */
-</style>

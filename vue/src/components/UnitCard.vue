@@ -15,29 +15,3 @@ defineProps<{
     </div>
   </RouterLink>
 </template>
-
-<style scoped>
-.grow {
-  transition: transform 0.2s;
-}
-
-.grow:hover {
-  transform: scale(1.05);
-}
-
-.pointer {
-  cursor: pointer;
-}
-
-.egyptian {
-  background-color: #ffeaa7;
-}
-
-.greek {
-  background-color: #74b9ff;
-}
-
-.norse {
-  background-color: #a29bfe;
-}
-</style>
