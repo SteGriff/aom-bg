@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Unit } from '@/types/unit'
 import { UnitClass } from '@/types/unitClass'
-import Cube from './Cube.vue'
+import Cube from './CubeIcon.vue'
 
 const props = defineProps<{
   unit: Unit
@@ -63,20 +63,3 @@ const titleCase = (str: string): string => {
     <p class="mv1 f6 tc">{{ unit.specialText }}</p>
   </div>
 </template>
-
-<style scoped>
-.bonus-narrow {
-  max-width: 10rem;
-}
-
-.bonus-wide {
-  max-width: 14rem;
-}
-
-.icon {
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-}
-
-</style>
