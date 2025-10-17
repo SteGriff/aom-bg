@@ -34,7 +34,7 @@ const titleCase = (str: string): string => {
     <span class="fr icon" :class="unit.type + '-icon'" :title="titleCase(unit.type)"></span>
   </p>
   <p v-if="!hidden('classes')" class="tc serif">
-    <span v-if="unit.age" class="small-caps">{{ unit.age }}</span>
+    <span v-if="unit.age" class="small-caps">{{ unit.age }}&nbsp;</span>
     <span v-for="(aClass, index) in allClasses()" :key="aClass" class="i">
       {{ titleCase(aClass) }}{{ index < allClasses().length - 1 ? ', ' : '' }}
     </span>
