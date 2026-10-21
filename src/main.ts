@@ -1,5 +1,5 @@
 import './assets/main.css'
-import 'tachyons'
+import 'tachyons/css/tachyons.css'
 
 import { createApp } from 'vue'
 
